@@ -1,1 +1,27 @@
-<H1>Financial assistant!</H1>
+<mat-sidenav-container class="app-container">
+  <mat-sidenav #drawer
+               mode="over"
+  >
+    <mat-selection-list [multiple]="false"
+                        (selectionChange)="_navigateTo($event.options[0].value)"
+    >
+      <mat-list-option *ngFor="let route of routes"
+                       [value]="route"
+      >{{route.name}}</mat-list-option>
+    </mat-selection-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button
+              (click)="drawer.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span>Financial Assistant</span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

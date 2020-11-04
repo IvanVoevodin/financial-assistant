@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/assets/theme/custom-theme.scss",
+              "src/assets/styles/styles.less"
             ],
             "scripts": []
           },
@@ -123,6 +124,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "financial-assistant"
 }
